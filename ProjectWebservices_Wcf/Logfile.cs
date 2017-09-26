@@ -75,6 +75,16 @@ namespace ProjectWebservices_Wcf
 		{
 			return $"Tid={Tid};ID={ID};Alarm={Alarm};Navn={Navn};Afdeling={Afdeling};Bolig={Bolig};Afmeldt={(Afmeldt == null ? DateTime.MinValue : Afmeldt)}";
 		}
+
+		public bool Dispose()
+		{
+			if(Afmeldt == DateTime.MinValue)
+			{
+				Afmeldt = DateTime.Now;
+				return true;
+			}
+			return false;
+		}
 		#endregion
 	}
 }

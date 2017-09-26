@@ -30,6 +30,21 @@ namespace ProjectWebservices_Wcf
 			}
 		}
 
+		public bool DisposeAlarm(string id)
+		{
+			if (logs.Count == 0) return false;
+			foreach(Logfile log in logs)
+			{
+				if(log.ID == id)
+				{
+					if (log.Dispose()) {
+						return true;
+					}
+				}
+			}
+			return false;
+		}
+
 		public CompositeType Log(CompositeType composite)
 		{
 			if (composite == null)
