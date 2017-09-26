@@ -16,6 +16,8 @@ namespace ProjectWebservices_Wcf
 		private string _Navn;
 		private string _Afdeling;
 		private string _Bolig;
+
+		private DateTime _Afmeldt;
 		#endregion
 
 		#region properties
@@ -49,6 +51,11 @@ namespace ProjectWebservices_Wcf
 			get { return _Bolig; }
 			set { _Bolig = value; }
 		}
+		public DateTime Afmeldt
+		{
+			get { return _Afmeldt; }
+			set { _Afmeldt = value; }
+		}
 		#endregion
 
 		#region constructor
@@ -66,7 +73,7 @@ namespace ProjectWebservices_Wcf
 		#region methods
 		public override string ToString()
 		{
-			return $"Tid={Tid};ID={ID};Alarm={Alarm};Navn={Navn};Afdeling={Afdeling};Bolig={Bolig}";
+			return $"Tid={Tid};ID={ID};Alarm={Alarm};Navn={Navn};Afdeling={Afdeling};Bolig={Bolig};Afmeldt={(Afmeldt == null ? DateTime.MinValue : Afmeldt)}";
 		}
 		#endregion
 	}

@@ -15,7 +15,7 @@ namespace ProjectWebservices_Wcf
 		CompositeType Log(CompositeType composite);
 
 		[OperationContract]
-		string ReadLogfiles();
+		List<string> ReadLogfiles();
 
 	}
 

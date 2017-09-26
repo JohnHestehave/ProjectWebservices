@@ -10,22 +10,23 @@ namespace ProjectWebservices_Wcf
 	// NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in both code and config file together.
 	public class LogfileService : ILogfileService
 	{
-		static List<Logfile> logs = new List<Logfile>();
-
-		public string ReadLogfiles()
+		static List<Logfile> logs = new List<Logfile>() {	new Logfile("id1", "al1", "navn1", "af1", "b1"),
+															new Logfile("id2", "al2", "navn2", "af2", "b2")};
+		
+		public List<string> ReadLogfiles()
 		{
 			if (logs.Count > 0)
 			{
-				string list = string.Empty;
+				List<string> list = new List<string>();
 				foreach (Logfile log in logs)
-				{
-					list += log.ToString() + "\n";
+				{	
+					list.Add(log.ToString());
 				}
 				return list;
 			}
 			else
 			{
-				return "No logfiles to read.";
+				return new List<string>() { "No logfiles to read." };
 			}
 		}
 
