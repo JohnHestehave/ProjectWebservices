@@ -12,8 +12,19 @@ namespace ProjectWebservices_Wcf
 	{
 		static List<Logfile> logs = new List<Logfile>() {	new Logfile("id1", "al1", "navn1", "af1", "b1"),
 															new Logfile("id2", "al2", "navn2", "af2", "b2")};
-		
-		public List<string> ReadLogfiles()
+
+		public List<Logfile> ReadLogfiles()
+		{
+			if (logs.Count > 0)
+			{
+				return logs;
+			}
+			else
+			{
+				return null;
+			}
+		}
+		/*public List<string> ReadLogfiles()
 		{
 			if (logs.Count > 0)
 			{
@@ -28,7 +39,7 @@ namespace ProjectWebservices_Wcf
 			{
 				return new List<string>() { "No logfiles to read." };
 			}
-		}
+		}*/
 
 		public bool DisposeAlarm(string id)
 		{

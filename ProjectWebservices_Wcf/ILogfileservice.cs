@@ -15,7 +15,7 @@ namespace ProjectWebservices_Wcf
 		CompositeType Log(CompositeType composite);
 
 		[OperationContract]
-		List<string> ReadLogfiles();
+		List<Logfile> ReadLogfiles();
 
 		[OperationContract]
 		bool DisposeAlarm(string id);
