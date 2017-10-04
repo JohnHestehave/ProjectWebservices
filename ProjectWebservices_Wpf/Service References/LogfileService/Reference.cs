@@ -15,7 +15,7 @@ namespace ProjectWebservices_Wpf.LogfileService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Logfile", Namespace="http://schemas.datacontract.org/2004/07/ProjectWebservices_Wcf")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Logfile", Namespace="http://schemas.datacontract.org/2004/07/ProjectWebservices_Azure_Pub")]
     [System.SerializableAttribute()]
     public partial class Logfile : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         

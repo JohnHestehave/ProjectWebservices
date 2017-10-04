@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectWebservices_Wcf", "ProjectWebservices_Wcf\ProjectWebservices_Wcf.csproj", "{746CD67D-E98E-4B08-9AEC-11EBF3A2A9C6}"
 EndProject
@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectWebservices_Console"
 	ProjectSection(ProjectDependencies) = postProject
 		{746CD67D-E98E-4B08-9AEC-11EBF3A2A9C6} = {746CD67D-E98E-4B08-9AEC-11EBF3A2A9C6}
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectWebservices_Azure_Pub", "ProjectWebservices_Azure_Pub\ProjectWebservices_Azure_Pub.csproj", "{36E8EF76-3772-44F3-B710-48F77654FA7E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,8 +35,15 @@ Global
 		{BF2207B6-CE36-4590-9EF5-B3A919D5E5CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF2207B6-CE36-4590-9EF5-B3A919D5E5CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF2207B6-CE36-4590-9EF5-B3A919D5E5CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36E8EF76-3772-44F3-B710-48F77654FA7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36E8EF76-3772-44F3-B710-48F77654FA7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36E8EF76-3772-44F3-B710-48F77654FA7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36E8EF76-3772-44F3-B710-48F77654FA7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EC18C5E5-C298-4200-B1B5-FACE1D9EEAB8}
 	EndGlobalSection
 EndGlobal

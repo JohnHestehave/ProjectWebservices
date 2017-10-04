@@ -55,18 +55,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Service References\LogfileService\LogfileService1.wsdl" />
     <None Include="Service References\LogfileService\ProjectWebservices_Console.LogfileService.Logfile.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\LogfileService\ProjectWebservices_Wcf.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\LogfileService\service.wsdl" />
-    <None Include="Service References\LogfileService\service.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\LogfileService\service1.xsd">
-      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>

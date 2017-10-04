@@ -14,7 +14,7 @@ namespace ProjectWebservices_Console
 	{
 		static void Main(string[] args)
 		{
-			LogfileService.LogfileServiceClient client = new LogfileService.LogfileServiceClient();
+            LogfileService.LogfileServiceClient client = new LogfileService.LogfileServiceClient();
             while (true)
             {
                 LogfileService.Logfile[] logs = client.ReadPendingAlarms();

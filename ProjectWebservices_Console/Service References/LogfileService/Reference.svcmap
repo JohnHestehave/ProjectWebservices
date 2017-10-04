@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9fdc0bdb-f8e3-4a3e-8e31-1c26042c4f20" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8c5213e5-d4d4-45dd-ac62-099ca302b381" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -19,13 +19,10 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/ProjectWebservices_Wcf/Service1/mex" Protocol="mex" SourceId="1" />
+    <MetadataSource Address="http://logfileservice.azurewebsites.net/LogfileService.svc?singleWsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="fefadc07-acd4-49c5-b283-1e1d5efd0010" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/ProjectWebservices_Wcf/Service1/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="5c69e123-83b4-466f-8640-6901bdf7d15c" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/ProjectWebservices_Wcf/Service1/mex" />
-    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="d884c5f4-77d8-4115-979c-c0ffc81c37c1" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/ProjectWebservices_Wcf/Service1/mex" />
-    <MetadataFile FileName="ProjectWebservices_Wcf.xsd" MetadataType="Schema" ID="bcb03b42-88c4-4bce-b300-7a08149e25bd" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/ProjectWebservices_Wcf/Service1/mex" />
+    <MetadataFile FileName="LogfileService1.wsdl" MetadataType="Wsdl" ID="04da53d1-94ec-4203-ab84-99f266fbd52a" SourceId="1" SourceUrl="http://logfileservice.azurewebsites.net/LogfileService.svc?singleWsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

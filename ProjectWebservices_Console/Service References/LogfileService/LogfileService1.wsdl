@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="LogfileService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpsBinding_ILogfileService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/ProjectWebservices_Azure_Pub" />
+      <xs:element name="ReadLogfiles">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadLogfilesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ProjectWebservices_Azure_Pub" minOccurs="0" name="ReadLogfilesResult" nillable="true" type="q1:ArrayOfLogfile" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DisposeAlarm">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DisposeAlarmResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="DisposeAlarmResult" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SendLogString">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="txt" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SendLogStringResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ProjectWebservices_Azure_Pub" minOccurs="0" name="SendLogStringResult" nillable="true" type="q2:Logfile" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadPendingAlarms">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadPendingAlarmsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ProjectWebservices_Azure_Pub" minOccurs="0" name="ReadPendingAlarmsResult" nillable="true" type="q3:ArrayOfLogfile" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Log">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="alarm" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="department" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="apartment" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="LogResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="LogResult" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ProjectWebservices_Azure_Pub" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ProjectWebservices_Azure_Pub" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ArrayOfLogfile">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Logfile" nillable="true" type="tns:Logfile" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfLogfile" nillable="true" type="tns:ArrayOfLogfile" />
+      <xs:complexType name="Logfile">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Alarm" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Apartment" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Department" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Disposed" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Time" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Logfile" nillable="true" type="tns:Logfile" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="ILogfileService_ReadLogfiles_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadLogfiles" />
+  </wsdl:message>
+  <wsdl:message name="ILogfileService_ReadLogfiles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadLogfilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogfileService_DisposeAlarm_InputMessage">
+    <wsdl:part name="parameters" element="tns:DisposeAlarm" />
+  </wsdl:message>
+  <wsdl:message name="ILogfileService_DisposeAlarm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DisposeAlarmResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogfileService_SendLogString_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendLogString" />
+  </wsdl:message>
+  <wsdl:message name="ILogfileService_SendLogString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendLogStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogfileService_ReadPendingAlarms_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadPendingAlarms" />
+  </wsdl:message>
+  <wsdl:message name="ILogfileService_ReadPendingAlarms_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadPendingAlarmsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILogfileService_Log_InputMessage">
+    <wsdl:part name="parameters" element="tns:Log" />
+  </wsdl:message>
+  <wsdl:message name="ILogfileService_Log_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ILogfileService">
+    <wsdl:operation name="ReadLogfiles">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogfileService/ReadLogfiles" message="tns:ILogfileService_ReadLogfiles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogfileService/ReadLogfilesResponse" message="tns:ILogfileService_ReadLogfiles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DisposeAlarm">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogfileService/DisposeAlarm" message="tns:ILogfileService_DisposeAlarm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogfileService/DisposeAlarmResponse" message="tns:ILogfileService_DisposeAlarm_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendLogString">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogfileService/SendLogString" message="tns:ILogfileService_SendLogString_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogfileService/SendLogStringResponse" message="tns:ILogfileService_SendLogString_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadPendingAlarms">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogfileService/ReadPendingAlarms" message="tns:ILogfileService_ReadPendingAlarms_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogfileService/ReadPendingAlarmsResponse" message="tns:ILogfileService_ReadPendingAlarms_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Log">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILogfileService/Log" message="tns:ILogfileService_Log_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILogfileService/LogResponse" message="tns:ILogfileService_Log_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ILogfileService" type="tns:ILogfileService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReadLogfiles">
+      <soap:operation soapAction="http://tempuri.org/ILogfileService/ReadLogfiles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisposeAlarm">
+      <soap:operation soapAction="http://tempuri.org/ILogfileService/DisposeAlarm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendLogString">
+      <soap:operation soapAction="http://tempuri.org/ILogfileService/SendLogString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadPendingAlarms">
+      <soap:operation soapAction="http://tempuri.org/ILogfileService/ReadPendingAlarms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Log">
+      <soap:operation soapAction="http://tempuri.org/ILogfileService/Log" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpsBinding_ILogfileService" type="tns:ILogfileService">
+    <wsp:PolicyReference URI="#BasicHttpsBinding_ILogfileService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReadLogfiles">
+      <soap:operation soapAction="http://tempuri.org/ILogfileService/ReadLogfiles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisposeAlarm">
+      <soap:operation soapAction="http://tempuri.org/ILogfileService/DisposeAlarm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendLogString">
+      <soap:operation soapAction="http://tempuri.org/ILogfileService/SendLogString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadPendingAlarms">
+      <soap:operation soapAction="http://tempuri.org/ILogfileService/ReadPendingAlarms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Log">
+      <soap:operation soapAction="http://tempuri.org/ILogfileService/Log" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LogfileService">
+    <wsdl:port name="BasicHttpBinding_ILogfileService" binding="tns:BasicHttpBinding_ILogfileService">
+      <soap:address location="http://logfileservice.azurewebsites.net/LogfileService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpsBinding_ILogfileService" binding="tns:BasicHttpsBinding_ILogfileService">
+      <soap:address location="https://logfileservice.azurewebsites.net/LogfileService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

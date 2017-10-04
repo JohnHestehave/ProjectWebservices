@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="ProjectWebservices_Azure.Service1" CodeBehind="LogfileService.svc.cs" %>
