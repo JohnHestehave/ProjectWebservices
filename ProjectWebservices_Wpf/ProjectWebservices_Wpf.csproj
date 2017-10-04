@@ -101,9 +101,6 @@
     <None Include="Service References\LogfileService\ProjectWebservices_Wcf.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\LogfileService\ProjectWebservices_Wpf.LogfileService.CompositeType.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\LogfileService\ProjectWebservices_Wpf.LogfileService.Logfile.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

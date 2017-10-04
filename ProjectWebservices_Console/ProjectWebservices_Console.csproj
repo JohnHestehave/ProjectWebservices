@@ -55,9 +55,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Service References\LogfileService\ProjectWebservices_Console.LogfileService.CompositeType.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Service References\LogfileService\ProjectWebservices_Console.LogfileService.Logfile.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

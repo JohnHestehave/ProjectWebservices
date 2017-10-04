@@ -24,7 +24,7 @@ namespace ProjectWebservices_Wcf
 
 		#region properties
 		[DataMember]
-		public DateTime Tid
+		public DateTime Time
 		{
 			get { return _Tid; }
 			set { _Tid = value; }
@@ -42,25 +42,25 @@ namespace ProjectWebservices_Wcf
 			set { _Alarm = value; }
 		}
 		[DataMember]
-		public string Navn
+		public string Name
 		{
 			get { return _Navn; }
 			set { _Navn = value; }
 		}
 		[DataMember]
-		public string Afdeling
+		public string Department
 		{
 			get { return _Afdeling; }
 			set { _Afdeling = value; }
 		}
 		[DataMember]
-		public string Bolig
+		public string Apartment
 		{
 			get { return _Bolig; }
 			set { _Bolig = value; }
 		}
 		[DataMember]
-		public DateTime Afmeldt
+		public DateTime Disposed
 		{
 			get { return _Afmeldt; }
 			set { _Afmeldt = value; }
@@ -70,26 +70,26 @@ namespace ProjectWebservices_Wcf
 		#region constructor
 		public Logfile(string id, string alarm, string navn, string afdeling, string bolig)
 		{
-			Tid = DateTime.Now;
+			Time = DateTime.Now;
 			ID = id;
 			Alarm = alarm;
-			Navn = navn;
-			Afdeling = afdeling;
-			Bolig = bolig;
+			Name = navn;
+			Department = afdeling;
+			Apartment = bolig;
 		}
 		#endregion
 
 		#region methods
 		public override string ToString()
 		{
-			return $"Tid={Tid};ID={ID};Alarm={Alarm};Navn={Navn};Afdeling={Afdeling};Bolig={Bolig};Afmeldt={(Afmeldt == null ? DateTime.MinValue : Afmeldt)}";
+			return $"Tid={Time};ID={ID};Alarm={Alarm};Navn={Name};Afdeling={Department};Bolig={Apartment};Afmeldt={(Disposed == null ? DateTime.MinValue : Disposed)}";
 		}
 
 		public bool Dispose()
 		{
-			if(Afmeldt == DateTime.MinValue)
+			if(Disposed == DateTime.MinValue)
 			{
-				Afmeldt = DateTime.Now;
+				Disposed = DateTime.Now;
 				return true;
 			}
 			return false;

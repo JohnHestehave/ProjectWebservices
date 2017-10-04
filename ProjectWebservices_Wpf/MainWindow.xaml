@@ -5,19 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjectWebservices_Wpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800">
+        Title="MainWindow" Height="450" Width="200">
 	<Grid>
-		<StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,30,0,0">
-			<Label x:Name="labelID" Content="Label" HorizontalAlignment="Left" Width="86" VerticalAlignment="Top"/>
-			<TextBox x:Name="textboxID" HorizontalAlignment="Left" Height="26"  TextWrapping="Wrap" Text="TextBox" Width="120" VerticalAlignment="Top"/>
-			<Label x:Name="labelAlarm" Content="Label" HorizontalAlignment="Left" Margin="0,15,0,0" Width="86" VerticalAlignment="Top"/>
-			<TextBox x:Name="textboxAlarm" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="TextBox" Width="120" VerticalAlignment="Top"/>
-			<Label x:Name="labelNavn" Content="Label" HorizontalAlignment="Left" Margin="0,15,0,0" Width="86" VerticalAlignment="Top"/>
-			<TextBox x:Name="textboxNavn" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="TextBox" Width="120" VerticalAlignment="Top"/>
-			<Label x:Name="labelAfdeling" Content="Label" HorizontalAlignment="Left" Margin="0,15,0,0" Width="86" VerticalAlignment="Top"/>
-			<TextBox x:Name="textboxAfdeling" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="TextBox" Width="120" VerticalAlignment="Top"/>
-			<Label x:Name="labelBolig" Content="Label" HorizontalAlignment="Left" Margin="0,15,0,0" Width="86" VerticalAlignment="Top"/>
-			<TextBox x:Name="textboxBolig" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="TextBox" Width="120" VerticalAlignment="Top"/>
-		</StackPanel>
-	</Grid>
+		<StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,15,0,0">
+			<Label x:Name="labelID" Content="ID" HorizontalAlignment="Left" Width="86" VerticalAlignment="Top"/>
+			<TextBox x:Name="textboxID" HorizontalAlignment="Left" Height="26"  TextWrapping="Wrap" Width="120" VerticalAlignment="Top"/>
+			<Label x:Name="labelAlarm" Content="Alarm" HorizontalAlignment="Left" Margin="0,15,0,0" Width="86" VerticalAlignment="Top"/>
+			<TextBox x:Name="textboxAlarm" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Width="120" VerticalAlignment="Top"/>
+			<Label x:Name="labelNavn" Content="Name" HorizontalAlignment="Left" Margin="0,15,0,0" Width="86" VerticalAlignment="Top"/>
+			<TextBox x:Name="textboxNavn" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Width="120" VerticalAlignment="Top"/>
+			<Label x:Name="labelAfdeling" Content="Department" HorizontalAlignment="Left" Margin="0,15,0,0" Width="86" VerticalAlignment="Top"/>
+			<TextBox x:Name="textboxAfdeling" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Width="120" VerticalAlignment="Top"/>
+			<Label x:Name="labelBolig" Content="Apartment" HorizontalAlignment="Left" Margin="0,15,0,0" Width="86" VerticalAlignment="Top"/>
+            <TextBox x:Name="textboxBolig" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Width="120" VerticalAlignment="Top"/>
+            <Button x:Name="buttonGenerate" Content="Generate" Margin="0,20,0,0" Width="auto" Height="40" Click="buttonGenerate_Click"/>
+        </StackPanel>
+    </Grid>
 </Window>

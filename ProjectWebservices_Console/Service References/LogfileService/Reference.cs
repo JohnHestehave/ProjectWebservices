@@ -15,115 +15,6 @@ namespace ProjectWebservices_Console.LogfileService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CompositeType", Namespace="http://schemas.datacontract.org/2004/07/ProjectWebservices_Wcf")]
-    [System.SerializableAttribute()]
-    public partial class CompositeType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AfdelingField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AlarmField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BoligField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NavnField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Afdeling {
-            get {
-                return this.AfdelingField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AfdelingField, value) != true)) {
-                    this.AfdelingField = value;
-                    this.RaisePropertyChanged("Afdeling");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Alarm {
-            get {
-                return this.AlarmField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AlarmField, value) != true)) {
-                    this.AlarmField = value;
-                    this.RaisePropertyChanged("Alarm");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Bolig {
-            get {
-                return this.BoligField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BoligField, value) != true)) {
-                    this.BoligField = value;
-                    this.RaisePropertyChanged("Bolig");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ID {
-            get {
-                return this.IDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.IDField, value) != true)) {
-                    this.IDField = value;
-                    this.RaisePropertyChanged("ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Navn {
-            get {
-                return this.NavnField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NavnField, value) != true)) {
-                    this.NavnField = value;
-                    this.RaisePropertyChanged("Navn");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Logfile", Namespace="http://schemas.datacontract.org/2004/07/ProjectWebservices_Wcf")]
     [System.SerializableAttribute()]
     public partial class Logfile : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -132,25 +23,25 @@ namespace ProjectWebservices_Console.LogfileService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AfdelingField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime AfmeldtField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string AlarmField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BoligField;
+        private string ApartmentField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DepartmentField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DisposedField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NavnField;
+        private string NameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime TidField;
+        private System.DateTime TimeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -159,32 +50,6 @@ namespace ProjectWebservices_Console.LogfileService {
             }
             set {
                 this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Afdeling {
-            get {
-                return this.AfdelingField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AfdelingField, value) != true)) {
-                    this.AfdelingField = value;
-                    this.RaisePropertyChanged("Afdeling");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime Afmeldt {
-            get {
-                return this.AfmeldtField;
-            }
-            set {
-                if ((this.AfmeldtField.Equals(value) != true)) {
-                    this.AfmeldtField = value;
-                    this.RaisePropertyChanged("Afmeldt");
-                }
             }
         }
         
@@ -202,14 +67,40 @@ namespace ProjectWebservices_Console.LogfileService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Bolig {
+        public string Apartment {
             get {
-                return this.BoligField;
+                return this.ApartmentField;
             }
             set {
-                if ((object.ReferenceEquals(this.BoligField, value) != true)) {
-                    this.BoligField = value;
-                    this.RaisePropertyChanged("Bolig");
+                if ((object.ReferenceEquals(this.ApartmentField, value) != true)) {
+                    this.ApartmentField = value;
+                    this.RaisePropertyChanged("Apartment");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Department {
+            get {
+                return this.DepartmentField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DepartmentField, value) != true)) {
+                    this.DepartmentField = value;
+                    this.RaisePropertyChanged("Department");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Disposed {
+            get {
+                return this.DisposedField;
+            }
+            set {
+                if ((this.DisposedField.Equals(value) != true)) {
+                    this.DisposedField = value;
+                    this.RaisePropertyChanged("Disposed");
                 }
             }
         }
@@ -228,27 +119,27 @@ namespace ProjectWebservices_Console.LogfileService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Navn {
+        public string Name {
             get {
-                return this.NavnField;
+                return this.NameField;
             }
             set {
-                if ((object.ReferenceEquals(this.NavnField, value) != true)) {
-                    this.NavnField = value;
-                    this.RaisePropertyChanged("Navn");
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime Tid {
+        public System.DateTime Time {
             get {
-                return this.TidField;
+                return this.TimeField;
             }
             set {
-                if ((this.TidField.Equals(value) != true)) {
-                    this.TidField = value;
-                    this.RaisePropertyChanged("Tid");
+                if ((this.TimeField.Equals(value) != true)) {
+                    this.TimeField = value;
+                    this.RaisePropertyChanged("Time");
                 }
             }
         }
@@ -267,12 +158,6 @@ namespace ProjectWebservices_Console.LogfileService {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="LogfileService.ILogfileService")]
     public interface ILogfileService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogfileService/Log", ReplyAction="http://tempuri.org/ILogfileService/LogResponse")]
-        ProjectWebservices_Console.LogfileService.CompositeType Log(ProjectWebservices_Console.LogfileService.CompositeType composite);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogfileService/Log", ReplyAction="http://tempuri.org/ILogfileService/LogResponse")]
-        System.Threading.Tasks.Task<ProjectWebservices_Console.LogfileService.CompositeType> LogAsync(ProjectWebservices_Console.LogfileService.CompositeType composite);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogfileService/ReadLogfiles", ReplyAction="http://tempuri.org/ILogfileService/ReadLogfilesResponse")]
         ProjectWebservices_Console.LogfileService.Logfile[] ReadLogfiles();
         
@@ -290,6 +175,18 @@ namespace ProjectWebservices_Console.LogfileService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogfileService/SendLogString", ReplyAction="http://tempuri.org/ILogfileService/SendLogStringResponse")]
         System.Threading.Tasks.Task<ProjectWebservices_Console.LogfileService.Logfile> SendLogStringAsync(string txt);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogfileService/ReadPendingAlarms", ReplyAction="http://tempuri.org/ILogfileService/ReadPendingAlarmsResponse")]
+        ProjectWebservices_Console.LogfileService.Logfile[] ReadPendingAlarms();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogfileService/ReadPendingAlarms", ReplyAction="http://tempuri.org/ILogfileService/ReadPendingAlarmsResponse")]
+        System.Threading.Tasks.Task<ProjectWebservices_Console.LogfileService.Logfile[]> ReadPendingAlarmsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogfileService/Log", ReplyAction="http://tempuri.org/ILogfileService/LogResponse")]
+        bool Log(string id, string alarm, string name, string department, string apartment);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILogfileService/Log", ReplyAction="http://tempuri.org/ILogfileService/LogResponse")]
+        System.Threading.Tasks.Task<bool> LogAsync(string id, string alarm, string name, string department, string apartment);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -319,14 +216,6 @@ namespace ProjectWebservices_Console.LogfileService {
                 base(binding, remoteAddress) {
         }
         
-        public ProjectWebservices_Console.LogfileService.CompositeType Log(ProjectWebservices_Console.LogfileService.CompositeType composite) {
-            return base.Channel.Log(composite);
-        }
-        
-        public System.Threading.Tasks.Task<ProjectWebservices_Console.LogfileService.CompositeType> LogAsync(ProjectWebservices_Console.LogfileService.CompositeType composite) {
-            return base.Channel.LogAsync(composite);
-        }
-        
         public ProjectWebservices_Console.LogfileService.Logfile[] ReadLogfiles() {
             return base.Channel.ReadLogfiles();
         }
@@ -349,6 +238,22 @@ namespace ProjectWebservices_Console.LogfileService {
         
         public System.Threading.Tasks.Task<ProjectWebservices_Console.LogfileService.Logfile> SendLogStringAsync(string txt) {
             return base.Channel.SendLogStringAsync(txt);
+        }
+        
+        public ProjectWebservices_Console.LogfileService.Logfile[] ReadPendingAlarms() {
+            return base.Channel.ReadPendingAlarms();
+        }
+        
+        public System.Threading.Tasks.Task<ProjectWebservices_Console.LogfileService.Logfile[]> ReadPendingAlarmsAsync() {
+            return base.Channel.ReadPendingAlarmsAsync();
+        }
+        
+        public bool Log(string id, string alarm, string name, string department, string apartment) {
+            return base.Channel.Log(id, alarm, name, department, apartment);
+        }
+        
+        public System.Threading.Tasks.Task<bool> LogAsync(string id, string alarm, string name, string department, string apartment) {
+            return base.Channel.LogAsync(id, alarm, name, department, apartment);
         }
     }
 }

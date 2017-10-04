@@ -11,8 +11,8 @@ namespace ProjectWebservices_Wcf
 	[ServiceContract]
 	public interface ILogfileService
 	{
-		[OperationContract]
-		CompositeType Log(CompositeType composite);
+		//[OperationContract]
+		//CompositeType Log(CompositeType composite);
 
 		[OperationContract]
 		List<Logfile> ReadLogfiles();
@@ -22,7 +22,12 @@ namespace ProjectWebservices_Wcf
 
 		[OperationContract]
 		Logfile SendLogString(string txt);
-		
+
+        [OperationContract]
+        List<Logfile> ReadPendingAlarms();
+
+        [OperationContract]
+        bool Log(string id, string alarm, string name, string department, string apartment);
 	}
 
 	// Use a data contract as illustrated in the sample below to add composite types to service operations.
@@ -35,6 +40,8 @@ namespace ProjectWebservices_Wcf
 		string _Navn;
 		string _Afdeling;
 		string _Bolig;
+
+        
 
 		[DataMember]
 		public string ID

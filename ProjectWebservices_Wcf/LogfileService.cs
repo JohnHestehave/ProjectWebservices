@@ -13,6 +13,7 @@ namespace ProjectWebservices_Wcf
 		static List<Logfile> logs = new List<Logfile>() {	new Logfile("id1", "al1", "navn1", "af1", "b1"),
 															new Logfile("id2", "al2", "navn2", "af2", "b2")};
 
+        static List<Logfile> pending = new List<Logfile>() { new Logfile("id1", "al1", "navn1", "af1", "b1") };
 		public List<Logfile> ReadLogfiles()
 		{
 			if (logs.Count > 0)
@@ -36,8 +37,8 @@ namespace ProjectWebservices_Wcf
 			string bolig = split[5];
 			string afmeldt = split[7];
 			Logfile l = new Logfile(id, alarm, navn, afdeling, bolig);
-			l.Tid = Convert.ToDateTime(tid);
-			l.Afmeldt = Convert.ToDateTime(afmeldt);
+			l.Time = Convert.ToDateTime(tid);
+			l.Disposed = Convert.ToDateTime(afmeldt);
 			logs.Add(l);
 			return l;
 		}
@@ -57,6 +58,19 @@ namespace ProjectWebservices_Wcf
 			return false;
 		}
 
+        public bool Log(string id, string alarm, string name, string department, string apartment)
+        {
+            if(id != "" && alarm != "" && name != "" && department != "" && apartment != "")
+            {
+                Logfile log = new Logfile(id, alarm, name, department, apartment);
+                logs.Add(log);
+
+                CheckAlarm(log);
+                return true;
+            }
+            return false;
+        }
+
 		public CompositeType Log(CompositeType composite)
 		{
 			if (composite == null)
@@ -65,9 +79,28 @@ namespace ProjectWebservices_Wcf
 			}
 			if (composite.ID != "" && composite.Alarm != "" && composite.Navn != "" && composite.Afdeling != "" && composite.Bolig != "")
 			{
-				logs.Add(new Logfile(composite.ID, composite.Alarm, composite.Navn, composite.Afdeling, composite.Bolig));
+                Logfile log = new Logfile(composite.ID, composite.Alarm, composite.Navn, composite.Afdeling, composite.Bolig);
+                logs.Add(log);
+
+                CheckAlarm(log);
 			}
 			return composite;
 		}
-	}
+
+        public List<Logfile> ReadPendingAlarms()
+        {
+            List<Logfile> list = new List<Logfile>(pending);
+            pending.Clear();
+            return (list ?? null);
+        }
+
+        private void CheckAlarm(Logfile log)
+        {
+            if (log.Name.ToLower() == "else")
+            {
+                pending.Add(log);
+                return;
+            }
+        }
+    }
 }

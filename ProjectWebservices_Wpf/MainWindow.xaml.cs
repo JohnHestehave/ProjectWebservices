@@ -27,9 +27,18 @@ namespace ProjectWebservices_Wpf
 			InitializeComponent();
 		}
 
-		
-	}
-	struct Data
+        private void buttonGenerate_Click(object sender, RoutedEventArgs e)
+        {
+            if(textboxID.Text != "" && textboxAlarm.Text != "" && textboxNavn.Text != "" && textboxAfdeling.Text != "" && textboxBolig.Text != "")
+            {
+                if(client.Log(textboxID.Text, textboxAlarm.Text, textboxNavn.Text, textboxAfdeling.Text, textboxBolig.Text))
+                {
+                    MessageBox.Show("Generated");
+                }
+            }
+        }
+    }
+    struct Data
 	{
 		public DateTime Tid { get; set; }
 		public string ID { get; set; }
