@@ -19,6 +19,9 @@ namespace ProjectWebservices_Wcf
 
 		[OperationContract]
 		bool DisposeAlarm(string id);
+
+		[OperationContract]
+		Logfile SendLogString(string txt);
 	}
 
 	// Use a data contract as illustrated in the sample below to add composite types to service operations.

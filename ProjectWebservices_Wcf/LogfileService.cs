@@ -24,22 +24,23 @@ namespace ProjectWebservices_Wcf
 				return null;
 			}
 		}
-		/*public List<string> ReadLogfiles()
+
+		public Logfile SendLogString(string txt)
 		{
-			if (logs.Count > 0)
-			{
-				List<string> list = new List<string>();
-				foreach (Logfile log in logs)
-				{	
-					list.Add(log.ToString());
-				}
-				return list;
-			}
-			else
-			{
-				return new List<string>() { "No logfiles to read." };
-			}
-		}*/
+			string[] split = txt.Split('	');
+			string tid = split[0];
+			string id = split[1];
+			string alarm = split[2];
+			string navn = split[3];
+			string afdeling = split[4];
+			string bolig = split[5];
+			string afmeldt = split[7];
+			Logfile l = new Logfile(id, alarm, navn, afdeling, bolig);
+			l.Tid = Convert.ToDateTime(tid);
+			l.Afmeldt = Convert.ToDateTime(afmeldt);
+			logs.Add(l);
+			return l;
+		}
 
 		public bool DisposeAlarm(string id)
 		{
