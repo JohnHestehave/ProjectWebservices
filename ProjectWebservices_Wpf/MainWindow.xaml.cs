@@ -22,38 +22,12 @@ namespace ProjectWebservices_Wpf
 	public partial class MainWindow : Window
 	{
 		LogfileService.LogfileServiceClient client = new LogfileService.LogfileServiceClient();
-		List<Data> LogfileData;
 		public MainWindow()
 		{
 			InitializeComponent();
-			LogfileData = new List<Data>();
 		}
 
-
-		public void LoadData()
-		{
-			Thread thread = new Thread(()=> {
-				LogfileService.Logfile[] data = client.ReadLogfiles();
-				Dispatcher.Invoke(new UpdateDataGrid(UpdateDataGridMethod), (object)data);
-			});
-			thread.Start();
-		}
-		public delegate void UpdateDataGrid(LogfileService.Logfile[] data);
-		public void UpdateDataGridMethod(LogfileService.Logfile[] data)
-		{
-			LogfileDataGrid.Items.Clear();
-			LogfileDataGrid.Items.Refresh();
-			foreach(LogfileService.Logfile d in data)
-			{
-				LogfileData.Add(new Data() { Tid = d.Tid, ID = d.ID, Alarm = d.Alarm, Navn = d.Navn, Afdeling = d.Afdeling, Bolig = d.Bolig, Afmeldt = d.Afmeldt});
-			}
-			LogfileDataGrid.ItemsSource = LogfileData;
-		}
-
-		private void LoadDataButton_Click(object sender, RoutedEventArgs e)
-		{
-			LoadData();
-		}
+		
 	}
 	struct Data
 	{
