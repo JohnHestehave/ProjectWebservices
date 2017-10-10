@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -10,10 +11,11 @@ namespace ProjectWebservices_Azure_Pub
 {
     public class LogfileService : ILogfileService
     {
-        static List<Logfile> logs = new List<Logfile>() {   new Logfile("id1", "al1", "navn1", "af1", "b1"),
-                                                            new Logfile("id2", "al2", "navn2", "af2", "b2")};
+        static List<Logfile> logs = new List<Logfile>();
+        static List<Logfile> pending = new List<Logfile>();
 
-        static List<Logfile> pending = new List<Logfile>() { new Logfile("id1", "al1", "navn1", "af1", "b1") };
+        static List<string> NameCriteria = new List<string>() { "else", "hans", "tommy", "michael" };
+        
         public List<Logfile> ReadLogfiles()
         {
             if (logs.Count > 0)
@@ -65,7 +67,7 @@ namespace ProjectWebservices_Azure_Pub
             {
                 Logfile log = new Logfile(id, alarm, name, department, apartment);
                 logs.Add(log);
-
+                UpdateLogTxt(log);
                 CheckAlarm(log);
                 return true;
             }
@@ -90,18 +92,44 @@ namespace ProjectWebservices_Azure_Pub
 
         public List<Logfile> ReadPendingAlarms()
         {
+            foreach (var item in pending)
+            {
+                item.Disposed = DateTime.Now;
+            }
             List<Logfile> list = new List<Logfile>(pending);
             pending.Clear();
-            return (list ?? null);
+            return (list.Count > 0 ? list : null);
         }
 
         private void CheckAlarm(Logfile log)
         {
-            if (log.Name.ToLower() == "else")
+            foreach (var person in NameCriteria)
+            {
+                if (log.Name.ToLower() == person)
+                {
+                    pending.Add(log);
+                    return;
+                }
+            }
+            DateTime dt22 = new DateTime();
+            dt22.AddHours(22);
+
+            DateTime dt6 = new DateTime();
+            dt6.AddHours(6);
+            
+            if (log.Time.Hour > dt22.Hour || log.Time.Hour < dt6.Hour)
             {
                 pending.Add(log);
                 return;
             }
+            
+        }
+        void UpdateLogTxt(Logfile log)
+        {
+            return; // ingen skriverettigheder
+            StreamWriter sw = new StreamWriter("logdata.txt");
+            sw.WriteLine(log.ToString());
+            sw.Close();
         }
     }
 }

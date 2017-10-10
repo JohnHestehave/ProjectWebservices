@@ -18,7 +18,7 @@ namespace ProjectWebservices_Console
             while (true)
             {
                 LogfileService.Logfile[] logs = client.ReadPendingAlarms();
-                foreach (LogfileService.Logfile log in logs)
+                if(logs != null) foreach (LogfileService.Logfile log in logs)
                 {
                     Console.WriteLine($"Tid={log.Time}  ID={log.ID}  Alarm={log.Alarm}  Navn={log.Name}  Afdeling={log.Department}  Bolig={log.Apartment}  Afmeldt={(log.Disposed == null ? DateTime.MinValue : log.Disposed)}");
                 }

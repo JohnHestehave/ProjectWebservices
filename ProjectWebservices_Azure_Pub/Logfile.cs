@@ -11,21 +11,21 @@ namespace ProjectWebservices_Azure_Pub
     {
 
         #region variables
-        private DateTime _Tid;
+        private DateTime _Time;
         private string _ID;
         private string _Alarm;
-        private string _Navn;
-        private string _Afdeling;
-        private string _Bolig;
-        private DateTime _Afmeldt;
+        private string _Name;
+        private string _Department;
+        private string _Apartment;
+        private DateTime _Disposed;
         #endregion
 
         #region properties
         [DataMember]
         public DateTime Time
         {
-            get { return _Tid; }
-            set { _Tid = value; }
+            get { return _Time; }
+            set { _Time = value; }
         }
         [DataMember]
         public string ID
@@ -42,26 +42,26 @@ namespace ProjectWebservices_Azure_Pub
         [DataMember]
         public string Name
         {
-            get { return _Navn; }
-            set { _Navn = value; }
+            get { return _Name; }
+            set { _Name = value; }
         }
         [DataMember]
         public string Department
         {
-            get { return _Afdeling; }
-            set { _Afdeling = value; }
+            get { return _Department; }
+            set { _Department = value; }
         }
         [DataMember]
         public string Apartment
         {
-            get { return _Bolig; }
-            set { _Bolig = value; }
+            get { return _Apartment; }
+            set { _Apartment = value; }
         }
         [DataMember]
         public DateTime Disposed
         {
-            get { return _Afmeldt; }
-            set { _Afmeldt = value; }
+            get { return _Disposed; }
+            set { _Disposed = value; }
         }
         #endregion
 
