@@ -27,23 +27,22 @@ namespace ProjectWebservices_Azure_Pub
                 return null;
             }
         }
-
-        public Logfile SendLogString(string txt)
-        {
-            string[] split = txt.Split('	');
-            string tid = split[0];
-            string id = split[1];
-            string alarm = split[2];
-            string navn = split[3];
-            string afdeling = split[4];
-            string bolig = split[5];
-            string afmeldt = split[7];
-            Logfile l = new Logfile(id, alarm, navn, afdeling, bolig);
-            l.Time = Convert.ToDateTime(tid);
-            l.Disposed = Convert.ToDateTime(afmeldt);
-            logs.Add(l);
-            return l;
-        }
+        //public Logfile SendLogString(string txt) // Debug Code
+        //{
+        //    string[] split = txt.Split('	');
+        //    string tid = split[0];
+        //    string id = split[1];
+        //    string alarm = split[2];
+        //    string navn = split[3];
+        //    string afdeling = split[4];
+        //    string bolig = split[5];
+        //    string afmeldt = split[7];
+        //    Logfile l = new Logfile(id, alarm, navn, afdeling, bolig);
+        //    l.Time = Convert.ToDateTime(tid);
+        //    l.Disposed = Convert.ToDateTime(afmeldt);
+        //    logs.Add(l);
+        //    return l;
+        //}
 
         public bool DisposeAlarm(string id)
         {

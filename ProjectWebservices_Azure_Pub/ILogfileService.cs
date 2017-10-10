@@ -21,8 +21,8 @@ namespace ProjectWebservices_Azure_Pub
         [OperationContract]
         bool DisposeAlarm(string id);
 
-        [OperationContract]
-        Logfile SendLogString(string txt);
+        //[OperationContract]
+        //Logfile SendLogString(string txt);
 
         [OperationContract]
         List<Logfile> ReadPendingAlarms();
