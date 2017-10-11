@@ -58,19 +58,19 @@ namespace ProjectWebservices_Azure_Pub
             set { _Alarm = value; }
         }
         [DataMember]
-        public string Navn
+        public string Name
         {
             get { return _Navn; }
             set { _Navn = value; }
         }
         [DataMember]
-        public string Afdeling
+        public string Department
         {
             get { return _Afdeling; }
             set { _Afdeling = value; }
         }
         [DataMember]
-        public string Bolig
+        public string Apartment
         {
             get { return _Bolig; }
             set { _Bolig = value; }

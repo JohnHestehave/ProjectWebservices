@@ -79,9 +79,9 @@ namespace ProjectWebservices_Azure_Pub
             {
                 throw new ArgumentNullException("composite");
             }
-            if (composite.ID != "" && composite.Alarm != "" && composite.Navn != "" && composite.Afdeling != "" && composite.Bolig != "")
+            if (composite.ID != "" && composite.Alarm != "" && composite.Name != "" && composite.Department != "" && composite.Apartment != "")
             {
-                Logfile log = new Logfile(composite.ID, composite.Alarm, composite.Navn, composite.Afdeling, composite.Bolig);
+                Logfile log = new Logfile(composite.ID, composite.Alarm, composite.Name, composite.Department, composite.Apartment);
                 logs.Add(log);
 
                 CheckAlarm(log);
